@@ -1,0 +1,36 @@
+<div class="carousel d-flex" #carousel>
+    <ng-container *ngFor="let item of images; index as i">
+        <div>
+            <div class="carousel-element rounded-3" [ngStyle]="imageSize" (click)="showImage(i)">
+                    <img [src]="item.thumbImage" alt="" class="">
+            </div>
+            <p class="text-center m-0">{{item.title}}</p>
+        </div>
+    </ng-container>
+
+    
+</div>
+<button class="carousel-button prevButton" (click)="onClickLeft()">
+    <i class='bx bx-chevron-left'></i>
+</button>
+<button class="carousel-button nextButton" (click)="onClickRight()">
+    <i class='bx bx-chevron-right'></i>
+</button>
+<div class="image-viewer" *ngIf="visible">
+    <h3 class="text-center text-white">
+        {{titleImage}}
+    </h3>
+    <div class="image-wrapper">
+        <img [src]="srcImage" [alt]="altImage">
+    </div>
+    <button class="image-viewer-button nextButton" (click)="nextButton()">
+        <i class='bx bx-chevron-right'></i>
+    </button>
+    <button class="image-viewer-button prevButton" (click)="prevButton()">
+        <i class='bx bx-chevron-left'></i>
+    </button>
+    <button class="image-viewer-button exitButton" (click)="exitButton()">
+        <i class='bx bx-x'></i>
+    </button>
+</div>
+

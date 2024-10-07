@@ -1,0 +1,82 @@
+:host{
+    --size: 35px;
+    --margin-button: 20px;
+}
+
+.carousel{
+    max-width: 100%;
+    max-height: 100%;
+    overflow-x: scroll ;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-element{
+    background-color: #a0a0a0;
+    flex-shrink: 0 ;
+    margin:0 2px;
+    overflow: hidden;
+}
+
+.carousel-element img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.carousel-button, .image-viewer-button{
+    position: absolute;
+    top: calc(50% - var(--size)/2);
+    height: var(--size);
+    width: var(--size);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.carousel-button.prevButton , .image-viewer-button.prevButton{
+    right: calc(100% - var(--size) - var(--margin-button) - 2px);
+}
+
+.carousel-button.nextButton , .image-viewer-button.nextButton{
+    left: calc(100% - var(--size) - var(--margin-button));
+}
+
+.image-viewer{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .6);
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    
+    img{
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+.exitButton{
+    top: 2%;
+    left: calc(100% - var(--size) - var(--margin-button));
+}
+
+.image-viewer .image-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+button i.bx{
+    font-size: 31px;
+    font-weight: bold;
+}
